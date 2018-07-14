@@ -20,7 +20,7 @@ export default {
 </script>
 
  <!-- 1rem = html font-size = 50px -->
-<style lang="stylus" scoped="">
+<style lang="stylus" scoped>
   @import '~styles/varibles.styl'
   .header
     display: flex
