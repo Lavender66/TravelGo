@@ -2,7 +2,7 @@
   <div>
     <div class="recommend-title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img  class="item-img" :src="item.imgUrl">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,25 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [ {
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1509/ca/2c5c95c035a9f99ad613fad782798aea.water.jpg_150x150_fc63fdb2.jpg',
-        title: '梁子湖龙湾度假村',
-        desc: '梁子湖龙湾度假村旅游圣地'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1710/90/909e5d4a6ac636ada3.img.jpg_150x150_13488beb.jpg',
-        title: '梵高星空艺术馆',
-        desc: '梵高星空艺术馆旅游圣地'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201403/11/1f70100804193c28f8b71378c0faa49e.jpg_150x150_db8e043b.jpg',
-        title: '户部巷',
-        desc: '武汉户部巷美食圣地'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

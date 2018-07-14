@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
-         <swiper :options="swiperOption">
+         <swiper :options="swiperOption" v-if="showSwiper">
         <!-- slides -->
-        <swiper-slide v-for="item of swiperList" :key="item.id">
+        <swiper-slide v-for="item of list" :key="item.id">
             <img class="swiper-img" :src="item.imgUrl"/>
         </swiper-slide>
         <!-- Optional controls -->
@@ -19,25 +19,24 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
         // 控制按钮，轮播图上的小点
         pagination: '.swiper-pagination',
         loop: true
-      },
-      swiperList: [{
-        id: '0001',
-        imgUrl: '//img1.qunarzz.com/vc/44/3e/ec/591b009e8d0fdee7183bd696d0.jpg'
-      }, {
-        id: '0002',
-        imgUrl: '//img1.qunarzz.com/vc/b8/dc/e9/464bc1e47e99d8a308a6e24817.jpg'
-      }, {
-        id: '0003',
-        imgUrl: '//img1.qunarzz.com/vc/60/81/e4/5c9d8886fc2739988b097026cc.jpg'
-      }]
+      }
+    }
+  },
+  computed: {
+    showSwiper () {
+      return this.list.length
     }
   }
+
 }
 </script>
 
