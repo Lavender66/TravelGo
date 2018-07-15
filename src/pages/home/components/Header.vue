@@ -7,10 +7,13 @@
       <span class="iconfont">&#xe632;</span>
       输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-      城市
-      <span class="iconfont" arrow-icon>&#xe619;</span>
-    </div>
+    <!-- 页面跳转，to指的是页面跳转的路径 -->
+    <router-link to='/city'>
+      <div class="header-right">
+        城市
+        <span class="iconfont" arrow-icon>&#xe619;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 <script>
@@ -27,7 +30,7 @@ export default {
   @import '~styles/varibles.styl'
   .header
     display: flex
-    line-height: .86rem
+    line-height: $headerHeight
     background: $bgColor
     color: #fff
     .height-left
@@ -51,6 +54,7 @@ export default {
       margin-left: .1rem
       float: right
       text-align: centerds
+      color: #fff
       .arrow-icon
         margin-left: -.0.8rem
         font-size: .24rem
