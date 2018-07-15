@@ -23,7 +23,7 @@ export default {
     text-align: center
     color: #fff
     background: $bgColor
-    fone-size: .32rem
+    font-size: .32rem
     .header-back
       position: absolute
       top: 0

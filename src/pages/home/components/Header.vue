@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <span class="iconfont back-icon">&#xe624;</span>
+      <div class="iconfont back-icon">&#xe624;</div>
     </div>
     <div class="header-input">
       <span class="iconfont">&#xe632;</span>
@@ -10,17 +10,19 @@
     <!-- 页面跳转，to指的是页面跳转的路径 -->
     <router-link to='/city'>
       <div class="header-right">
-        城市
+        {{this.city}}
         <span class="iconfont" arrow-icon>&#xe619;</span>
       </div>
     </router-link>
   </div>
 </template>
+
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'HomeHeader',
-  props: {
-    city: String
+  computed: {
+    ...mapState(['city'])
   }
 }
 </script>
@@ -33,7 +35,7 @@ export default {
     line-height: $headerHeight
     background: $bgColor
     color: #fff
-    .height-left
+    .header-left
       width: .64rem
       float: left
       .back-icon
@@ -50,12 +52,12 @@ export default {
       border-radius: .1rem
       color: #ccc
     .header-right
-      width: 1.25rem
-      margin-left: .1rem
+      min-width: 1.04rem
+      padding: 0 .1rem
       float: right
-      text-align: centerds
+      text-align: center
       color: #fff
       .arrow-icon
-        margin-left: -.0.8rem
+        margin-left: -.04rem
         font-size: .24rem
 </style>
