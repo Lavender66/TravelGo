@@ -1,16 +1,14 @@
 <template>
   <div class="container" @click="handleGallaryClick">
     <div class="wrapper">
-       <swiper :options="swiperOptions">
-        <!-- slides -->
+      <swiper :options="swiperOptions">
         <swiper-slide
-          v-for="(item,index) in imgs"
+          v-for="(item, index) in imgs"
           :key="index"
         >
-            <img class="gallary-img" :src="item"/>
+          <img class="gallary-img" :src="item" />
         </swiper-slide>
-        <!-- Optional controls -->
-        <div class="swiper-pagination"  slot="pagination"></div>
+        <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
     </div>
   </div>
@@ -64,7 +62,6 @@ export default {
       width: 100%
       padding-bottom: 100%
       .gallary-img
-        height:100%
         width: 100%
       .swiper-pagination
         color: #fff

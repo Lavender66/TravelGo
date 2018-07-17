@@ -11,7 +11,7 @@
     <router-link to='/city'>
       <div class="header-right">
         {{this.city}}
-        <span class="iconfont" arrow-icon>&#xe619;</span>
+        <span class="iconfont arrow-icon">&#xe619;</span>
       </div>
     </router-link>
   </div>

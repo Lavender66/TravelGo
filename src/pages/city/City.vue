@@ -38,9 +38,9 @@ export default {
   methods: {
     getCityInfo () {
       axios.get('/api/city.json')
-        .then(this.getCityInfoSucc)
+        .then(this.handleGetCityInfoSucc)
     },
-    getCityInfoSucc (res) {
+    handleGetCityInfoSucc (res) {
       res = res.data
       if (res.ret && res.data) {
         const data = res.data
@@ -59,4 +59,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
 </style>

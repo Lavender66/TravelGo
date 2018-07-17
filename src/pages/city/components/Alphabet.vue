@@ -5,7 +5,7 @@
       v-for="item of letters"
       :key="item"
       :ref="item"
-      @touchstart="handleTouchStart"
+      @touchstart.prevent="handleTouchStart"
       @touchmove="handleTouchMove"
       @touchend="handleTouchEnd"
       @click="handleLetterClick"
@@ -76,7 +76,7 @@ export default {
   @import '~styles/varibles.styl'
   .list
     display: flex
-    flex-direction:column
+    flex-direction: column
     justify-content: center
     position: absolute
     top: 1.58rem
@@ -84,7 +84,7 @@ export default {
     bottom: 0
     width: .4rem
     .item
-      line-height: .3rem
+      line-height: .4rem
       text-align: center
       color: $bgColor
 </style>

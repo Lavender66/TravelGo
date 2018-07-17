@@ -1,30 +1,40 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg">
+      <img class="banner-img" :src="bannerImg" />
       <div class="banner-info">
-        <div class="banner-title">故宫(AAAAA景区)</div>
+        <div class="banner-tittle">
+          {{this.sightName}}
+        </div>
         <div class="banner-number">
-          <span class="iconfont banner-icon">&#xe600;</span>10
+          <span class="iconfont banner-icon">&#xe600;</span>
+          {{this.bannerImgs.length}}
         </div>
       </div>
+    </div>
+    <fade-animation>
       <common-gallary
-        :imgs="imgs"
+        :imgs="bannerImgs"
         v-show="showGallary"
         @close="handleGallaryClose"
       ></common-gallary>
-    </div>
+    </fade-animation>
   </div>
 </template>
 
 <script>
 import CommonGallary from 'common/gallary/Gallary'
+import FadeAnimation from 'common/fade/FadeAnimation'
 export default {
   name: 'DetailBanner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
+  },
   data () {
     return {
-      showGallary: false,
-      imgs: ['//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg', '//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg']
+      showGallary: false
     }
   },
   methods: {
@@ -36,14 +46,15 @@ export default {
     }
   },
   components: {
-    CommonGallary
+    CommonGallary,
+    FadeAnimation
   }
 }
 </script>
 
 <style lang="stylus" scoped>
   .banner
-    position:relative
+    position: relative
     overflow: hidden
     height: 0
     padding-bottom: 55%
@@ -57,13 +68,13 @@ export default {
       bottom: 0
       line-height: .6rem
       color: #fff
-      background-image: linear-gradient(top,rgba(0,0,0,0), rgba(0,0,0,0.8))
-      .banner-title
+      background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8))
+      .banner-tittle
         flex: 1
         font-size: .32rem
         padding: 0 .2rem
       .banner-number
-        height:.32rem
+        height: .32rem
         line-height: .32rem
         margin-top: .14rem
         padding: 0 .4rem

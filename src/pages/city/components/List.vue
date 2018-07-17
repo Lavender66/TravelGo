@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="area">
-        <div class="title border-topbottom"> 热门城市</div>
+        <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
           <div
             class="button-wrapper"
@@ -46,12 +46,12 @@
 
 <script>
 import Bscroll from 'better-scroll'
-import {mapState, mapMutations} from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'CityList',
   props: {
-    cities: Object,
     hot: Array,
+    cities: Object,
     letter: String
   },
   computed: {
@@ -89,7 +89,7 @@ export default {
       border-color: #ccc
     &:after
       border-color: #ccc
-   .border-bottom
+  .border-bottom
     &:before
       border-color: #ccc
   .list
@@ -112,11 +112,11 @@ export default {
         float: left
         width: 33.33%
         .button
-           margin: .1rem
-           padding: .1rem 0
-           text-align: center
-           border: .02rem solid #ccc
-           border-radius: .06rem
+          margin: .1rem
+          padding: .1rem 0
+          text-align: center
+          border: .02rem solid #ccc
+          border-radius: .06rem
     .item-list
       .item
         line-height: .76rem
