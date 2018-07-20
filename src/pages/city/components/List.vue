@@ -67,6 +67,9 @@ export default {
     },
     ...mapMutations(['changeCity'])
   },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wrapper, {click: true})
+  },
   watch: {
     letter () {
       if (this.letter) {
@@ -75,9 +78,6 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
-  },
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
   }
 }
 </script>
