@@ -11,9 +11,9 @@ vue.js+node.js
 #### 安装教程
 
 1. # install dependencies
-npm install
+    npm install
 2. # serve with hot reload at localhost:8080
-npm run dev
+    npm run dev
 3. # build for production and view the bundle analyzer report
-npm run build --report
+    npm run build --report
 
